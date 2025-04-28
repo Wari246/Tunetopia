@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{618AA404-C303-DC6A-AA05-B45F03D8038B}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/Mouse.cs">
+    <Files>
+      <File FileName="Assets/code/Mouse.cs" Line="16" Column="42" />
+      <File FileName="Assets/code/SnapSocket.cs" />
+      <File FileName="Assets/code/SnapPlug.cs" />
+      <File FileName="Assets/code/PuzzleCompletionChecker.cs" />
+      <File FileName="Assets/code/PartSpawner.cs" />
+      <File FileName="Assets/code/RightClickRotator.cs" />
+      <File FileName="Assets/code/ObjectRotator.cs" />
+      <File FileName="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/MaterialReferenceManager.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="My project (6)" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="code" expanded="True">
+                <Node name="gomi" expanded="True" />
+                <Node name="Mouse.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="114da890-c9b1-4059-8133-79d67d62b711" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
