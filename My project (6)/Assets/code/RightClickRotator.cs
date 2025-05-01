@@ -1,15 +1,30 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RightClickRotator : MonoBehaviour
 {
     [SerializeField]
     private float rotationAngle = 45f;
 
-    [SerializeField]
-    private Vector3 rotationAxis = Vector3.up;
-
     [HideInInspector]
-    public bool isTemporarilyHeld = false; // 完全接続されたら true に
+    public bool isTemporarilyHeld = false;
+
+    public Button xAxisButton;
+    public Button yAxisButton;
+    public Button zAxisButton;
+    public Text currentAxisLabel;
+
+    private Vector3 currentAxis = Vector3.up;
+
+    void Start()
+    {
+        // ボタンがあればリスナーを設定
+        if (xAxisButton != null) xAxisButton.onClick.AddListener(() => SetRotationAxis(Vector3.right));
+        if (yAxisButton != null) yAxisButton.onClick.AddListener(() => SetRotationAxis(Vector3.up));
+        if (zAxisButton != null) zAxisButton.onClick.AddListener(() => SetRotationAxis(Vector3.forward));
+
+        UpdateAxisLabel();
+    }
 
     void Update()
     {
@@ -28,6 +43,24 @@ public class RightClickRotator : MonoBehaviour
 
     private void RotateObject()
     {
-        transform.Rotate(rotationAxis, rotationAngle, Space.Self);
+        transform.Rotate(currentAxis, rotationAngle, Space.Self);
+    }
+
+    private void SetRotationAxis(Vector3 newAxis)
+    {
+        currentAxis = newAxis;
+        UpdateAxisLabel();
+    }
+
+    private void UpdateAxisLabel()
+    {
+        if (currentAxisLabel == null) return;
+
+        if (currentAxis == Vector3.right)
+            currentAxisLabel.text = "X軸で回転中";
+        else if (currentAxis == Vector3.up)
+            currentAxisLabel.text = "Y軸で回転中";
+        else if (currentAxis == Vector3.forward)
+            currentAxisLabel.text = "Z軸で回転中";
     }
 }
