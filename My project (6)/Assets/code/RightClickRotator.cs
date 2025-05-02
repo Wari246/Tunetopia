@@ -9,19 +9,18 @@ public class RightClickRotator : MonoBehaviour
     [HideInInspector]
     public bool isTemporarilyHeld = false;
 
-    public Button xAxisButton;
-    public Button yAxisButton;
-    public Button zAxisButton;
+    public Button toggleRotationAxisButton;
     public Text currentAxisLabel;
 
-    private Vector3 currentAxis = Vector3.up;
+    private Vector3 currentAxis = Vector3.up; // 初期状態：Y軸（横回転）
 
     void Start()
     {
-        // ボタンがあればリスナーを設定
-        if (xAxisButton != null) xAxisButton.onClick.AddListener(() => SetRotationAxis(Vector3.right));
-        if (yAxisButton != null) yAxisButton.onClick.AddListener(() => SetRotationAxis(Vector3.up));
-        if (zAxisButton != null) zAxisButton.onClick.AddListener(() => SetRotationAxis(Vector3.forward));
+        // ボタンがあれば切り替え機能を追加
+        if (toggleRotationAxisButton != null)
+            toggleRotationAxisButton.onClick.AddListener(ToggleRotationAxis);
+        else
+            Debug.LogWarning("toggleRotationAxisButton が設定されていません。");
 
         UpdateAxisLabel();
     }
@@ -46,9 +45,13 @@ public class RightClickRotator : MonoBehaviour
         transform.Rotate(currentAxis, rotationAngle, Space.Self);
     }
 
-    private void SetRotationAxis(Vector3 newAxis)
+    private void ToggleRotationAxis()
     {
-        currentAxis = newAxis;
+        if (currentAxis == Vector3.up)
+            currentAxis = Vector3.right; // 横 → 縦
+        else
+            currentAxis = Vector3.up;    // 縦 → 横
+
         UpdateAxisLabel();
     }
 
@@ -57,10 +60,8 @@ public class RightClickRotator : MonoBehaviour
         if (currentAxisLabel == null) return;
 
         if (currentAxis == Vector3.right)
-            currentAxisLabel.text = "X軸で回転中";
+            currentAxisLabel.text = "X軸（縦回転）";
         else if (currentAxis == Vector3.up)
-            currentAxisLabel.text = "Y軸で回転中";
-        else if (currentAxis == Vector3.forward)
-            currentAxisLabel.text = "Z軸で回転中";
+            currentAxisLabel.text = "Y軸（横回転）";
     }
 }
