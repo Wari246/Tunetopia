@@ -344,6 +344,7 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/code/CameraSwitcher.cs"
 "Assets/code/gomi/PuzzleGameController.cs"
 "Assets/code/gomi/PuzzlePiece.cs"
 "Assets/code/gomi/PuzzlePieceScaler.cs"
