@@ -349,6 +349,7 @@
 "Assets/code/gomi/PuzzlePiece.cs"
 "Assets/code/gomi/PuzzlePieceScaler.cs"
 "Assets/code/gomi/ScaleOnTrigger.cs"
+"Assets/code/ModeManager.cs"
 "Assets/code/Mouse.cs"
 "Assets/code/MoveOnObjectRemoved.cs"
 "Assets/code/ObjectRotator.cs"
