@@ -1,30 +1,36 @@
 ﻿<Properties StartupConfiguration="{618AA404-C303-DC6A-AA05-B45F03D8038B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/CameraSwitcher.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/NewBehaviourScript.cs">
     <Files>
       <File FileName="Assets/code/Mouse.cs" Line="18" Column="30" />
-      <File FileName="Assets/code/SnapSocket.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/SnapPlug.cs" Line="10" Column="1" />
-      <File FileName="Assets/code/PuzzleCompletionChecker.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/SnapSocket.cs" />
+      <File FileName="Assets/code/SnapPlug.cs" />
+      <File FileName="Assets/code/PuzzleCompletionChecker.cs" />
       <File FileName="Assets/code/PartSpawner.cs" />
-      <File FileName="Assets/code/RightClickRotator.cs" Line="68" Column="1" />
+      <File FileName="Assets/code/RightClickRotator.cs" />
       <File FileName="Assets/code/ObjectRotator.cs" />
       <File FileName="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/MaterialReferenceManager.cs" />
-      <File FileName="Assets/code/ScaleOnHit.cs" Line="15" Column="2" />
-      <File FileName="Assets/code/PuzzleProgressionController.cs" Line="51" Column="1" />
-      <File FileName="Assets/code/RightClickRotator.cs" Line="3" Column="31" />
-      <File FileName="Assets/code/CameraSwitcher.cs" Line="27" Column="1" />
+      <File FileName="Assets/code/ScaleOnHit.cs" />
+      <File FileName="Assets/code/PuzzleProgressionController.cs" />
+      <File FileName="Assets/code/CameraSwitcher.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/NewBehaviourScript.cs" Line="19" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="My project (6)" expanded="True" selected="True" />
+          <Node name="My project (6)" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="code" expanded="True">
+                <Node name="NewBehaviourScript.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="114da890-c9b1-4059-8133-79d67d62b711" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="782908a1-7505-4369-81b6-08046a096e3a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

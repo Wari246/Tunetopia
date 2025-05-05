@@ -67,12 +67,13 @@
     <Compile Include="Assets/code/PuzzleProgressionController.cs" />
     <Compile Include="Assets/code/gomi/ScaleOnTrigger.cs" />
     <Compile Include="Assets/code/gomi/PuzzleGameController.cs" />
+    <Compile Include="Assets/code/CameraSwitcher.cs" />
     <Compile Include="Assets/code/MoveOnObjectRemoved.cs" />
     <Compile Include="Assets/code/ObjectRotator.cs" />
     <Compile Include="Assets/code/ScaleOnHit.cs" />
     <Compile Include="Assets/code/PartSpawner.cs" />
     <Compile Include="Assets/code/gomi/PuzzlePiece.cs" />
-    <Compile Include="Assets/code/CameraSwitcher.cs" />
+    <Compile Include="Assets/code/CanvasCameraChanger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
