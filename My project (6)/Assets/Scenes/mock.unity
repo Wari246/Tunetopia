@@ -3866,6 +3866,7 @@ MonoBehaviour:
   - {fileID: 963194227}
   - {fileID: 1842784146}
   - {fileID: 995076130}
+  canvas: {fileID: 1663227614}
   switchButton: {fileID: 1145878671}
 --- !u!4 &634367376
 Transform:
@@ -5480,9 +5481,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 77, z: -77.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.999999, y: 76.99999, z: -77.899994}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8555,7 +8556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1711126883
 RectTransform:
   m_ObjectHideFlags: 0
