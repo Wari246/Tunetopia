@@ -1,10 +1,19 @@
 using UnityEngine;
+using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class Mouse : MonoBehaviour
 {
     [Header("スナップ設定")]
     public float snapRange = 0.5f;
     public bool allowTemporaryHoldOnWrongSocket = true;
+
+    [Header("効果音")]
+    public AudioClip holdSound;
+    public AudioClip insertSound;
+
+    [Header("アニメーション設定")]
+    public float insertAnimationDuration = 0.2f;
 
     private Vector3 mOffset;
     private float mZCoord;
@@ -16,11 +25,13 @@ public class Mouse : MonoBehaviour
     private SnapSocket socketInfo = null;
     private SnapPlug plugInfo = null;
     private RightClickRotator rotator = null;
+    private AudioSource audioSource;
 
     void Start()
     {
         plugInfo = GetComponentInChildren<SnapPlug>();
         rotator = GetComponentInChildren<RightClickRotator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnMouseDown()
@@ -52,9 +63,6 @@ public class Mouse : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
-    /// <summary>
-    /// 仮止めの判定処理
-    /// </summary>
     private void CheckForTemporaryHold()
     {
         GameObject[] sockets = GameObject.FindGameObjectsWithTag("SnapSocket");
@@ -77,6 +85,11 @@ public class Mouse : MonoBehaviour
 
                     if (idMatch || allowTemporaryHoldOnWrongSocket)
                     {
+                        if (!isHeldTemporarily && holdSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(holdSound);
+                        }
+
                         transform.position = s.transform.position;
                         transform.rotation = s.transform.rotation;
 
@@ -94,9 +107,6 @@ public class Mouse : MonoBehaviour
         socketInfo = null;
     }
 
-    /// <summary>
-    /// 仮止め状態でクリックしたら完全に挿入する
-    /// </summary>
     private void TryInsert()
     {
         if (socketInfo == null || plugInfo == null) return;
@@ -113,37 +123,51 @@ public class Mouse : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 完全にパーツを押し込む処理
-    /// </summary>
     private void FullyInsert()
     {
         isFullyInserted = true;
         isHeldTemporarily = false;
+        StartCoroutine(AnimateInsert());
+    }
 
-        transform.position = snapTarget.position;
-        transform.rotation = snapTarget.rotation;
+    private IEnumerator AnimateInsert()
+    {
+        Vector3 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
 
         Vector3 pushDirWorld = transform.TransformDirection(plugInfo.pushDirection.normalized);
-        transform.position += pushDirWorld * plugInfo.pushDistance;
+        Vector3 endPos = snapTarget.position + pushDirWorld * plugInfo.pushDistance;
+        Quaternion endRot = snapTarget.rotation;
 
-        // SnapSocket 側に完全合体を通知
+        float elapsed = 0f;
+        while (elapsed < insertAnimationDuration)
+        {
+            float t = elapsed / insertAnimationDuration;
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+            transform.rotation = Quaternion.Slerp(startRot, endRot, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = endPos;
+        transform.rotation = endRot;
+
         socketInfo.SetConnectionStatus(true);
 
-        // 回転スクリプトがあればロックする
         if (rotator != null)
         {
             rotator.isTemporarilyHeld = true;
         }
 
-        // 親子化して固定
         transform.SetParent(snapTarget);
 
-        // PuzzleProgressionController に通知して次のパーツを解放
         PuzzleProgressionController.Instance?.ReportPieceFullyInserted();
 
+        if (insertSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(insertSound);
+        }
 
-        // このスクリプトはもう不要
         this.enabled = false;
     }
 }
