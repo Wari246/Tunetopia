@@ -351,6 +351,7 @@
 "Assets/code/gomi/PuzzlePieceScaler.cs"
 "Assets/code/gomi/ScaleOnTrigger.cs"
 "Assets/code/Mouse.cs"
+"Assets/code/MouseZoom.cs"
 "Assets/code/MoveModeToggler.cs"
 "Assets/code/MoveOnObjectRemoved.cs"
 "Assets/code/ObjectRotator.cs"
