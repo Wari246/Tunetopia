@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/code/RightClickRotator.cs" />
+    <Compile Include="Assets/code/MouseZoom.cs" />
     <Compile Include="Assets/code/Mouse.cs" />
     <Compile Include="Assets/code/SnapPlug.cs" />
     <Compile Include="Assets/code/PuzzleManager.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Assets/code/ScaleOnHit.cs" />
     <Compile Include="Assets/code/PartSpawner.cs" />
     <Compile Include="Assets/code/gomi/PuzzlePiece.cs" />
-    <Compile Include="Assets/code/MouseZoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
