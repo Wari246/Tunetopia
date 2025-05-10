@@ -9,27 +9,26 @@ public class RightClickRotator : MonoBehaviour
     [HideInInspector]
     public bool isTemporarilyHeld = false;
 
-    private bool isSelected = false;
-
     public enum RotationAxis { X, Y, Z }
     public RotationAxis currentAxis = RotationAxis.Y;
 
-    [Header("UI Setup")]
-    public string switchAxisButtonName = "SwitchAxisButton"; // Hierarchy 上の名前
-    public string axisTextName = "AxisText"; // 表示用 Text のオブジェクト名
+    [Header("UI Auto-Setup")]
+    public string switchAxisButtonName = "SwitchAxisButton";
+    public string axisTextName = "AxisText";
 
     private Text axisDisplayText;
+    private bool isMouseOver = false;
 
     void Start()
     {
-        // UIボタンを名前で探してイベント登録
+        // UIボタンにイベント登録
         GameObject btnObj = GameObject.Find(switchAxisButtonName);
         if (btnObj != null && btnObj.TryGetComponent<Button>(out Button switchButton))
         {
             switchButton.onClick.AddListener(SwitchAxis);
         }
 
-        // Textを名前で探して取得
+        // Text参照取得
         GameObject textObj = GameObject.Find(axisTextName);
         if (textObj != null && textObj.TryGetComponent<Text>(out Text text))
         {
@@ -39,22 +38,19 @@ public class RightClickRotator : MonoBehaviour
 
     void Update()
     {
-        // 選択処理（左クリック）
-        if (Input.GetMouseButtonDown(0))
+        // マウスがオブジェクトに当たっているか確認
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        isMouseOver = false;
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (hit.transform == transform)
             {
-                isSelected = hit.transform == transform;
-            }
-            else
-            {
-                isSelected = false;
+                isMouseOver = true;
             }
         }
 
-        // 回転処理（右クリック）
-        if (Input.GetMouseButtonDown(1) && isSelected && !isTemporarilyHeld)
+        // 右クリックで回転（触れていて・一時保持されていない時）
+        if (Input.GetMouseButtonDown(1) && isMouseOver && !isTemporarilyHeld)
         {
             Rotate();
         }
