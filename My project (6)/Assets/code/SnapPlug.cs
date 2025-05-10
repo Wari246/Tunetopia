@@ -4,17 +4,19 @@ using System.Collections;
 public class SnapPlug : MonoBehaviour
 {
     public string plugID;
-    public Vector3 pushDirection = Vector3.forward; // 押し込む方向
-    public float pushDistance = 0.02f;   // 押し込む距離
-    public float snapRange = 0.5f;        // スナップ範囲
-    public AudioClip holdSound;           // 仮止めのサウンド
-    public AudioClip insertSound;         // 完全に挿入されたサウンド
-    public float insertDuration = 0.2f;   // 完全に挿入されるアニメーションの時間
+    public Vector3 pushDirection = Vector3.forward;
+    public float pushDistance = 0.02f;
+    public float snapRange = 0.5f;
+    public float autoSnapThreshold = 0.3f;
+    public AudioClip holdSound;
+    public AudioClip insertSound;
+    public float insertDuration = 0.2f;
 
     private SnapSocket targetSocket;
-    private bool isHeldTemporarily = false;   // 仮止め状態かどうか
-    private bool isFullyInserted = false;     // 完全に挿入されたかどうか
-    private float lockTime = 0f;              // 仮止め位置のロック時間
+    private bool isHeldTemporarily = false;
+    private bool isFullyInserted = false;
+    private bool hasSnappedToPosition = false;
+    private float lockTime = 0f;
 
     private AudioSource audioSource;
     private Transform parentTransform;
@@ -29,57 +31,76 @@ public class SnapPlug : MonoBehaviour
     {
         if (isFullyInserted) return;
 
-        // 仮止めロック時間中は動かさない
         if (isHeldTemporarily && Time.time < lockTime) return;
 
-        // 仮止め可能な位置の確認
-        CheckSnapSockets();
+        // まだ仮止めされてない → スナップ位置をチェック
+        if (!isHeldTemporarily)
+        {
+            CheckSnapSockets();
+        }
 
-        // 左クリックで押し込む処理
-        if (isHeldTemporarily && Input.GetMouseButtonDown(0)) // 左クリック
+        // 仮止め後、左クリックで完全に挿入
+        if (isHeldTemporarily && Input.GetMouseButtonDown(0))
         {
             StartCoroutine(InsertToSocket());
         }
+
+        // スナップ位置にまだ移動していない場合、範囲内で強制的に移動
+        if (isHeldTemporarily && !hasSnappedToPosition && targetSocket != null)
+        {
+            float distance = Vector3.Distance(transform.position, targetSocket.transform.position);
+            if (distance <= autoSnapThreshold)
+            {
+                SnapToSocketPosition();
+            }
+        }
     }
 
-    private void CheckSnapSockets()
+    void CheckSnapSockets()
     {
         GameObject[] sockets = GameObject.FindGameObjectsWithTag("SnapSocket");
+        SnapSocket closestSocket = null;
+        float closestDistance = snapRange;
 
         foreach (var s in sockets)
         {
             SnapSocket socket = s.GetComponent<SnapSocket>();
             if (socket == null || socket.IsFullySnapped) continue;
 
-            float distance = Vector3.Distance(transform.position, socket.transform.position);
-            if (distance > snapRange) continue;
+            float dist = Vector3.Distance(transform.position, socket.transform.position);
+            if (dist > closestDistance) continue;
 
-            float angleDiff = Quaternion.Angle(transform.rotation, socket.transform.rotation);
-            if (angleDiff > socket.allowedAngleDifference) continue;
+            float angle = Quaternion.Angle(transform.rotation, socket.transform.rotation);
+            if (angle > socket.allowedAngleDifference) continue;
 
-            // 仮止め
-            parentTransform.position = socket.transform.position;
-            parentTransform.rotation = socket.transform.rotation;
-            targetSocket = socket;
+            closestSocket = socket;
+            closestDistance = dist;
+        }
+
+        if (closestSocket != null)
+        {
+            targetSocket = closestSocket;
             isHeldTemporarily = true;
-            lockTime = Time.time + 0.5f; // 仮止めロック時間（0.5秒）
+            lockTime = Time.time + 0.5f;
 
             if (holdSound != null && audioSource != null)
-            {
                 audioSource.PlayOneShot(holdSound);
-            }
-
-            break;
         }
     }
 
-    private IEnumerator InsertToSocket()
+    void SnapToSocketPosition()
+    {
+        parentTransform.position = targetSocket.transform.position;
+        parentTransform.rotation = targetSocket.transform.rotation;
+        hasSnappedToPosition = true;
+    }
+
+    IEnumerator InsertToSocket()
     {
         isFullyInserted = true;
         isHeldTemporarily = false;
         targetSocket.SetConnectionStatus(true);
 
-        // マウススクリプト無効化
         var mouse = parentTransform.GetComponent<Mouse>();
         if (mouse != null) mouse.enabled = false;
 
@@ -104,8 +125,6 @@ public class SnapPlug : MonoBehaviour
         parentTransform.SetParent(targetSocket.transform);
 
         if (insertSound != null && audioSource != null)
-        {
             audioSource.PlayOneShot(insertSound);
-        }
     }
 }

@@ -5,10 +5,11 @@ public class Mouse : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
 
+    public bool isDraggable = true;
+
     void OnMouseDown()
     {
-        // 完全に挿入されたパーツは動かさない
-        if (!enabled) return;
+        if (!isDraggable) return;
 
         mZCoord = Camera.main.WorldToScreenPoint(transform.position).z;
         mOffset = transform.position - GetMouseWorldPos();
@@ -16,7 +17,7 @@ public class Mouse : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (!enabled) return;
+        if (!isDraggable) return;
 
         transform.position = GetMouseWorldPos() + mOffset;
     }

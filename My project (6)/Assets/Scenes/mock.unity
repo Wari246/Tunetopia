@@ -295,11 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &27339914
 AudioSource:
   m_ObjectHideFlags: 0
@@ -702,11 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.7
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &63754318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1390,11 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &133337053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,7 +1713,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 1
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &155638296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155638296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0197, y: 0.056000013, z: -0.0411}
+  m_LocalPosition: {x: -0.04366, y: 0.056000013, z: -0.04381}
   m_LocalScale: {x: 0.002638098, y: 0.0025, z: 0.0024999988}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1838,7 +1825,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 3
   allowedAngleDifference: 30
-  allowMultipleConnections: 1
 --- !u!1 &206499246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,11 +1924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &209221484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2244,11 +2226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &214054778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2489,7 +2467,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 1
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &296020500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,11 +2707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &300785187
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2941,10 +2914,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 2
   plugID: 2
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 2.5
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &324265278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,7 +2950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324265278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04880011, y: -0.00268998, z: 0.0017000437}
+  m_LocalPosition: {x: -0.04168, y: 0.00008, z: 0.0017000437}
   m_LocalScale: {x: 0.0011777498, y: 0.0011499665, z: 0.00084398035}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3055,10 +3032,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 3
   plugID: 3
   pushDirection: {x: 0.01, y: 0, z: 0}
-  pushDistance: 0.5
+  pushDistance: 10
+  snapRange: 2
+  autoSnapThreshold: 1
+  holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
+  insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
+  insertDuration: 0.2
 --- !u!1 &339935051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,11 +3119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 10
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
-  insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &339935056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3304,6 +3281,7 @@ Transform:
   m_Children:
   - {fileID: 324265279}
   - {fileID: 1945244371043562863}
+  - {fileID: 2127787007}
   m_Father: {fileID: 1221766068}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3377,11 +3355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 1
-  allowTemporaryHoldOnWrongSocket: 0
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &346286696
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3588,10 +3562,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 1
   plugID: 1
   pushDirection: {x: 0, y: 0, z: 10}
   pushDistance: 16
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &368595082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,7 +3682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &396824930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3913,7 +3890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &463517099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,11 +4035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &464875175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4217,7 +4189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485405881}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0515, y: 0.0008, z: -0.028}
+  m_LocalPosition: {x: 0.0515, y: 0.0008, z: -0.0158}
   m_LocalScale: {x: 0.0014069861, y: 0.0013333332, z: 0.0013333326}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4299,9 +4271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 3
+  acceptablePlugID: 1
   allowedAngleDifference: 30
-  allowMultipleConnections: 1
 --- !u!1 &546435513
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,11 +4611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &593401908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4947,11 +4914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &612924336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5188,11 +5151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &616770945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5440,10 +5399,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 1
   plugID: 1
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 5
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &631001102
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,11 +5556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &675360705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6307,10 +6266,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 4
   plugID: 4
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 0.8
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &809524479
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,11 +6567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 12
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &845743951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6906,11 +6865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &906046084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7173,11 +7128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &921402607
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7384,11 +7335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &927608214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7965,11 +7912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 20
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1033336509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8206,11 +8149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1074118064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8492,7 +8431,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 4
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &1183113332
 GameObject:
   m_ObjectHideFlags: 0
@@ -8623,11 +8561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1196777235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8864,11 +8798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1228069921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9309,10 +9239,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 6
   plugID: 6
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 0.7
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &1293482961
 GameObject:
   m_ObjectHideFlags: 0
@@ -9425,7 +9359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &1296275730
 GameObject:
   m_ObjectHideFlags: 0
@@ -9569,11 +9502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &1330503203
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9893,11 +9822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1357961151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10195,11 +10120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &1414675394
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10408,7 +10329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &1494261772
 GameObject:
   m_ObjectHideFlags: 0
@@ -10620,11 +10540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1609293650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11218,10 +11134,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 2
   plugID: 2
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 2
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &1706991133
 GameObject:
   m_ObjectHideFlags: 0
@@ -11301,11 +11221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1706991138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11620,11 +11536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1723612784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12021,11 +11933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 10
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
-  insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1742887800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12206,11 +12114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1751541639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12427,11 +12331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1751837334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12668,11 +12568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1764250041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12877,11 +12773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 10
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
-  insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1776566712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13213,11 +13105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &1795798659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13494,7 +13382,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 6
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &1824405055
 GameObject:
   m_ObjectHideFlags: 0
@@ -13691,11 +13578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1839223271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14109,11 +13992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.7
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
-  insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1860458799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14382,10 +14261,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 2
   plugID: 2
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 0.5
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &1870469891
 GameObject:
   m_ObjectHideFlags: 0
@@ -14466,11 +14349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.9
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &1870469896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14736,11 +14615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &1957653519
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14947,11 +14822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 12
-  allowTemporaryHoldOnWrongSocket: 0
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &1964861378
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15156,11 +15027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 12
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!82 &1969889259
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15367,10 +15234,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 5
   plugID: 5
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 0.8
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &2020393985
 GameObject:
   m_ObjectHideFlags: 0
@@ -15579,7 +15450,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 5
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &2032961698
 GameObject:
   m_ObjectHideFlags: 0
@@ -15724,7 +15594,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 3
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &2054753047
 GameObject:
   m_ObjectHideFlags: 0
@@ -15837,7 +15706,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
-  allowMultipleConnections: 0
 --- !u!1 &2077787440
 GameObject:
   m_ObjectHideFlags: 0
@@ -15951,11 +15819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.7
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &2078008525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16081,6 +15945,124 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2127787006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2127787007}
+  - component: {fileID: 2127787011}
+  - component: {fileID: 2127787010}
+  - component: {fileID: 2127787009}
+  - component: {fileID: 2127787008}
+  m_Layer: 0
+  m_Name: plug (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2127787007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127787006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03493, y: 0.0001, z: 0.00044}
+  m_LocalScale: {x: 0.0011777498, y: 0.0011499665, z: 0.00084398035}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 346286690}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2127787008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127787006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2127787009
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127787006}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2127787010
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127787006}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2127787011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127787006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plugID: 1
+  pushDirection: {x: 0.01, y: 0, z: 0}
+  pushDistance: 1
+  snapRange: 1
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
+  insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
+  insertDuration: 0.2
 --- !u!1 &2128668442
 GameObject:
   m_ObjectHideFlags: 0
@@ -16148,11 +16130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &2128668446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16400,10 +16378,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cee8414222e43a083defd513564205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptablePlugID: 3
   plugID: 3
   pushDirection: {x: 1, y: 0, z: 0}
   pushDistance: 4
+  snapRange: 0.5
+  autoSnapThreshold: 0.3
+  holdSound: {fileID: 0}
+  insertSound: {fileID: 0}
+  insertDuration: 0.2
 --- !u!1 &2139725457
 GameObject:
   m_ObjectHideFlags: 0
@@ -16500,11 +16482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50fe7591316c44969b50901597acea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapRange: 0.5
-  allowTemporaryHoldOnWrongSocket: 1
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
-  insertAnimationDuration: 0.2
+  isDraggable: 1
 --- !u!114 &2141934848
 MonoBehaviour:
   m_ObjectHideFlags: 0
