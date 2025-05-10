@@ -1,31 +1,26 @@
 ﻿<Properties StartupConfiguration="{618AA404-C303-DC6A-AA05-B45F03D8038B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/NewBehaviourScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/RightClickRotator.cs">
     <Files>
       <File FileName="Assets/code/Mouse.cs" Line="174" Column="1" IsPinned="True" />
       <File FileName="Assets/code/SnapSocket.cs" />
       <File FileName="Assets/code/SnapPlug.cs" />
       <File FileName="Assets/code/PuzzleCompletionChecker.cs" />
       <File FileName="Assets/code/PartSpawner.cs" />
-      <File FileName="Assets/code/RightClickRotator.cs" />
+      <File FileName="Assets/code/RightClickRotator.cs" Line="1" Column="1" />
       <File FileName="Assets/code/ObjectRotator.cs" />
       <File FileName="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/MaterialReferenceManager.cs" />
       <File FileName="Assets/code/ScaleOnHit.cs" />
       <File FileName="Assets/code/PuzzleProgressionController.cs" />
-      <File FileName="Assets/code/CameraSwitcher.cs" Line="49" Column="1" />
-      <File FileName="Assets/code/MoveOnObjectRemoved.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/ModeManager.cs" Line="26" Column="1" />
-      <File FileName="Assets/code/MoveModeToggler.cs" Line="15" Column="1" />
-      <File FileName="Assets/code/NewBehaviourScript.cs" Line="3" Column="23" />
-      <File FileName="Assets/code/NewBehaviourScript.cs" Line="49" Column="1" />
+      <File FileName="Assets/code/CameraSwitcher.cs" />
+      <File FileName="Assets/code/MoveOnObjectRemoved.cs" />
+      <File FileName="Assets/code/MoveModeToggler.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="My project (6)" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="code" expanded="True">
-                <Node name="NewBehaviourScript.cs" selected="True" />
-              </Node>
+            <Node name="Assets" expanded="True" selected="True">
+              <Node name="code" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -34,7 +29,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="782908a1-7505-4369-81b6-08046a096e3a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cb134799-c2fa-4a8b-bf14-445de78209f5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
