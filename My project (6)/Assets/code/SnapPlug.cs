@@ -29,23 +29,20 @@ public class SnapPlug : MonoBehaviour
 
     void Update()
     {
-        if (isFullyInserted) return;
+        if (isFullyInserted) return; // 完全に挿入されていたら何もしない
 
         if (isHeldTemporarily && Time.time < lockTime) return;
 
-        // まだ仮止めされてない → スナップ位置をチェック
         if (!isHeldTemporarily)
         {
             CheckSnapSockets();
         }
 
-        // 仮止め後、左クリックで完全に挿入
         if (isHeldTemporarily && Input.GetMouseButtonDown(0))
         {
             StartCoroutine(InsertToSocket());
         }
 
-        // スナップ位置にまだ移動していない場合、範囲内で強制的に移動
         if (isHeldTemporarily && !hasSnappedToPosition && targetSocket != null)
         {
             float distance = Vector3.Distance(transform.position, targetSocket.transform.position);
@@ -83,6 +80,9 @@ public class SnapPlug : MonoBehaviour
             isHeldTemporarily = true;
             lockTime = Time.time + 0.5f;
 
+            // 仮止めとして一瞬固定（位置・回転）
+            SnapToSocketPosition();
+
             if (holdSound != null && audioSource != null)
                 audioSource.PlayOneShot(holdSound);
         }
@@ -101,13 +101,18 @@ public class SnapPlug : MonoBehaviour
         isHeldTemporarily = false;
         targetSocket.SetConnectionStatus(true);
 
+        // パーツが完全に挿入されたら動かないようにする
+        parentTransform.GetComponent<Collider>().enabled = false; // 動かないようにするためにコライダーを無効化
+
         var mouse = parentTransform.GetComponent<Mouse>();
         if (mouse != null) mouse.enabled = false;
 
         Vector3 startPos = parentTransform.position;
         Quaternion startRot = parentTransform.rotation;
+
+        // ワールド空間での押し込み方向
         Vector3 pushDirWorld = transform.TransformDirection(pushDirection.normalized);
-        Vector3 endPos = targetSocket.transform.position + pushDirWorld * pushDistance;
+        Vector3 endPos = startPos + pushDirWorld * pushDistance;
         Quaternion endRot = targetSocket.transform.rotation;
 
         float elapsed = 0f;
