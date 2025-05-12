@@ -31,7 +31,6 @@ public class PuzzleProgressionController : MonoBehaviour
 
     void Awake()
     {
-        // シングルトン化
         if (Instance == null)
         {
             Instance = this;
@@ -45,14 +44,12 @@ public class PuzzleProgressionController : MonoBehaviour
 
     void Start()
     {
-        // ステップが未設定なら警告
         if (spawnSteps == null || spawnSteps.Count == 0)
         {
             Debug.LogWarning("spawnSteps が設定されていません。ステップが1つ以上必要です。");
             return;
         }
 
-        // 全パーツを非表示
         foreach (var step in spawnSteps)
         {
             foreach (var obj in step.piecesToSpawn)
@@ -62,14 +59,12 @@ public class PuzzleProgressionController : MonoBehaviour
 
             foreach (var hideObj in step.objectsToHideOnStepComplete)
             {
-                if (hideObj != null) hideObj.SetActive(true); // 念のため表示
+                if (hideObj != null) hideObj.SetActive(true);
             }
         }
 
-        // 最初のステップ開始
         SpawnCurrentStep();
 
-        // 「次へ」ボタン設定
         if (nextButton != null)
         {
             nextButton.gameObject.SetActive(false);
@@ -81,9 +76,6 @@ public class PuzzleProgressionController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 現在のステップのパーツを表示
-    /// </summary>
     private void SpawnCurrentStep()
     {
         if (currentStepIndex < 0 || currentStepIndex >= spawnSteps.Count)
@@ -92,7 +84,6 @@ public class PuzzleProgressionController : MonoBehaviour
             return;
         }
 
-        // 全パーツ非表示
         foreach (var step in spawnSteps)
         {
             foreach (var obj in step.piecesToSpawn)
@@ -101,7 +92,6 @@ public class PuzzleProgressionController : MonoBehaviour
             }
         }
 
-        // 現在のステップのみ表示
         Step currentStep = spawnSteps[currentStepIndex];
         foreach (var obj in currentStep.piecesToSpawn)
         {
@@ -113,14 +103,10 @@ public class PuzzleProgressionController : MonoBehaviour
         nextButton?.gameObject.SetActive(false);
     }
 
-    /// <summary>
-    /// パーツが完全に合体したときに呼ばれる
-    /// </summary>
     public void ReportPieceFullyInserted()
     {
         if (awaitingNext) return;
 
-        // 範囲外チェック
         if (currentStepIndex < 0 || currentStepIndex >= spawnSteps.Count)
         {
             Debug.LogWarning($"ReportPieceFullyInserted: currentStepIndex ({currentStepIndex}) が spawnSteps.Count ({spawnSteps.Count}) の範囲外です。");
@@ -130,11 +116,12 @@ public class PuzzleProgressionController : MonoBehaviour
         currentCompletedCount++;
         Step currentStep = spawnSteps[currentStepIndex];
 
+        Debug.Log($"ステップ {currentStepIndex} の合体数: {currentCompletedCount} / {currentStep.requiredCompletedCount}");
+
         if (currentCompletedCount >= currentStep.requiredCompletedCount)
         {
             awaitingNext = true;
 
-            // 「次へ」ボタンを表示
             if (nextButton != null)
             {
                 nextButton.gameObject.SetActive(true);
@@ -142,9 +129,6 @@ public class PuzzleProgressionController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 「次へ」ボタンが押されたときに次のステップへ進む
-    /// </summary>
     private void OnNextButtonClicked()
     {
         if (currentStepIndex < 0 || currentStepIndex >= spawnSteps.Count)
@@ -155,7 +139,6 @@ public class PuzzleProgressionController : MonoBehaviour
 
         Step currentStep = spawnSteps[currentStepIndex];
 
-        // 完了時に非表示にするオブジェクト
         foreach (var obj in currentStep.objectsToHideOnStepComplete)
         {
             if (obj != null) obj.SetActive(false);

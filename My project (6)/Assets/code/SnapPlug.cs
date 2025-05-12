@@ -5,7 +5,7 @@ public class SnapPlug : MonoBehaviour
 {
     public string plugID;
     public Vector3 pushDirection = Vector3.forward;
-    public float pushDistance = 0.02f;
+    public float pushDistance = 0.02f; // fallback距離
     public float snapRange = 0.5f;
     public float autoSnapThreshold = 0.3f;
     public AudioClip holdSound;
@@ -20,16 +20,18 @@ public class SnapPlug : MonoBehaviour
 
     private AudioSource audioSource;
     private Transform parentTransform;
+    private Mouse mouseScript;
 
     void Start()
     {
         audioSource = GetComponentInParent<AudioSource>();
         parentTransform = transform.parent;
+        mouseScript = parentTransform.GetComponent<Mouse>();
     }
 
     void Update()
     {
-        if (isFullyInserted) return; // 完全に挿入されていたら何もしない
+        if (isFullyInserted) return;
 
         if (isHeldTemporarily && Time.time < lockTime) return;
 
@@ -49,6 +51,14 @@ public class SnapPlug : MonoBehaviour
             if (distance <= autoSnapThreshold)
             {
                 SnapToSocketPosition();
+            }
+            else
+            {
+                Vector3 plugToParent = transform.position - parentTransform.position;
+                Vector3 targetParentPos = targetSocket.transform.position - plugToParent;
+
+                parentTransform.position = Vector3.Lerp(parentTransform.position, targetParentPos, Time.deltaTime * 30f);
+                parentTransform.rotation = Quaternion.Slerp(parentTransform.rotation, targetSocket.transform.rotation, Time.deltaTime * 30f);
             }
         }
     }
@@ -80,9 +90,6 @@ public class SnapPlug : MonoBehaviour
             isHeldTemporarily = true;
             lockTime = Time.time + 0.5f;
 
-            // 仮止めとして一瞬固定（位置・回転）
-            SnapToSocketPosition();
-
             if (holdSound != null && audioSource != null)
                 audioSource.PlayOneShot(holdSound);
         }
@@ -90,29 +97,47 @@ public class SnapPlug : MonoBehaviour
 
     void SnapToSocketPosition()
     {
-        parentTransform.position = targetSocket.transform.position;
+        Vector3 plugToParent = transform.position - parentTransform.position;
+        Vector3 targetParentPos = targetSocket.transform.position - plugToParent;
+
+        parentTransform.position = targetParentPos;
         parentTransform.rotation = targetSocket.transform.rotation;
         hasSnappedToPosition = true;
     }
 
     IEnumerator InsertToSocket()
     {
+        if (targetSocket == null || targetSocket.socketID != plugID)
+        {
+            Debug.Log("プラグIDとソケットIDが一致しません。挿入できません。");
+            yield break;
+        }
+
         isFullyInserted = true;
         isHeldTemporarily = false;
         targetSocket.SetConnectionStatus(true);
 
-        // パーツが完全に挿入されたら動かないようにする
-        parentTransform.GetComponent<Collider>().enabled = false; // 動かないようにするためにコライダーを無効化
-
-        var mouse = parentTransform.GetComponent<Mouse>();
-        if (mouse != null) mouse.enabled = false;
+        Collider col = parentTransform.GetComponent<Collider>();
+        if (col != null) col.enabled = false;
+        if (mouseScript != null) mouseScript.enabled = false;
 
         Vector3 startPos = parentTransform.position;
         Quaternion startRot = parentTransform.rotation;
 
-        // ワールド空間での押し込み方向
         Vector3 pushDirWorld = transform.TransformDirection(pushDirection.normalized);
-        Vector3 endPos = startPos + pushDirWorld * pushDistance;
+
+        float finalPushDistance = pushDistance;
+
+        if (targetSocket.insertionEndPoint != null)
+        {
+            Vector3 plugTip = transform.position;
+            Vector3 endPoint = targetSocket.insertionEndPoint.position;
+
+            float plugZLength = transform.lossyScale.z * 0.5f; // 必要に応じて調整
+            finalPushDistance = Vector3.Distance(plugTip, endPoint) + plugZLength;
+        }
+
+        Vector3 endPos = startPos + pushDirWorld * finalPushDistance;
         Quaternion endRot = targetSocket.transform.rotation;
 
         float elapsed = 0f;
@@ -131,5 +156,9 @@ public class SnapPlug : MonoBehaviour
 
         if (insertSound != null && audioSource != null)
             audioSource.PlayOneShot(insertSound);
+        if (PuzzleProgressionController.Instance != null)
+        {
+            PuzzleProgressionController.Instance.ReportPieceFullyInserted();
+        }
     }
 }

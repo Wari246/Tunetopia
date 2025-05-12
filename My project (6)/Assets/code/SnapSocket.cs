@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SnapSocket : MonoBehaviour
 {
+    public string socketID;  // ? ?????
     public string acceptablePlugID;
+    public Transform insertionEndPoint; // ???????Transform?Unity??????????
+
     public float allowedAngleDifference = 10f;
     private bool isFullySnapped = false;
 

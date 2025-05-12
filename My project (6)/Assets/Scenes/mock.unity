@@ -1629,7 +1629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145499253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0095, y: 0, z: -0}
+  m_LocalPosition: {x: -0.01, y: 0, z: -0.0085}
   m_LocalScale: {x: 0.0009999999, y: 0.001, z: 0.0009999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1711,6 +1711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 1
   acceptablePlugID: 1
   allowedAngleDifference: 30
 --- !u!1 &155638296
@@ -1823,6 +1824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 3
   allowedAngleDifference: 30
 --- !u!1 &206499246
@@ -2078,7 +2080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &213808145
 Transform:
   m_ObjectHideFlags: 0
@@ -2465,6 +2467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 1
   allowedAngleDifference: 30
 --- !u!1 &296020500
@@ -3074,6 +3077,7 @@ Transform:
   m_LocalScale: {x: 1.5000006, y: 1.5, z: 1.5000006}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2129883143}
   - {fileID: 1749779560557021179}
   m_Father: {fileID: 7526235}
   m_RootOrder: 0
@@ -3680,6 +3684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
 --- !u!1 &396824930
@@ -3888,6 +3893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
 --- !u!1 &463517099
@@ -4271,6 +4277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 1
   allowedAngleDifference: 30
 --- !u!1 &546435513
@@ -5317,7 +5324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619654696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0001, y: 0.0011000447, z: -0.01}
+  m_LocalPosition: {x: 0.00265, y: 0.0011000447, z: -0.0098}
   m_LocalScale: {x: 0.0009999997, y: 0.001, z: 0.0007423528}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5402,10 +5409,10 @@ MonoBehaviour:
   plugID: 1
   pushDirection: {x: 0.01, y: 0, z: 0}
   pushDistance: 5
-  snapRange: 0.5
-  autoSnapThreshold: 0.3
-  holdSound: {fileID: 0}
-  insertSound: {fileID: 0}
+  snapRange: 4
+  autoSnapThreshold: 2
+  holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
+  insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
   insertDuration: 0.2
 --- !u!1 &631001102
 GameObject:
@@ -8429,6 +8436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 4
   allowedAngleDifference: 30
 --- !u!1 &1183113332
@@ -9357,6 +9365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
 --- !u!1 &1296275730
@@ -10245,7 +10254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493700170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0052, y: -0.0003999509, z: -0.004}
+  m_LocalPosition: {x: -0.0052, y: -0.0003999509, z: -0.0008}
   m_LocalScale: {x: 0.0007423523, y: 0.001, z: 0.00134707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10327,6 +10336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 2
   acceptablePlugID: 2
   allowedAngleDifference: 30
 --- !u!1 &1494261772
@@ -11136,9 +11146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plugID: 2
   pushDirection: {x: 0.01, y: 0, z: 0}
-  pushDistance: 2
-  snapRange: 0.5
-  autoSnapThreshold: 0.3
+  pushDistance: 3
+  snapRange: 4
+  autoSnapThreshold: 2
   holdSound: {fileID: 0}
   insertSound: {fileID: 0}
   insertDuration: 0.2
@@ -13380,6 +13390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 6
   allowedAngleDifference: 30
 --- !u!1 &1824405055
@@ -15257,7 +15268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2020393986
 Transform:
   m_ObjectHideFlags: 0
@@ -15448,6 +15459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 5
   allowedAngleDifference: 30
 --- !u!1 &2032961698
@@ -15592,6 +15604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 3
   acceptablePlugID: 3
   allowedAngleDifference: 30
 --- !u!1 &2054753047
@@ -15704,6 +15717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb49e47ae664a1db00a623a28b1176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketID: 
   acceptablePlugID: 2
   allowedAngleDifference: 30
 --- !u!1 &2077787440
@@ -16295,12 +16309,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129883142}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.0021, y: 0.0056, z: -0.0014}
-  m_LocalScale: {x: 0.0015105811, y: 0.004069304, z: 0.0040693046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.004768097, y: -0.00091605884, z: -0.0005476175}
+  m_LocalScale: {x: 0.00074235216, y: 0.0010000005, z: 0.0010000003}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1749779560557021179}
+  m_Father: {fileID: 339935052}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &2129883144
@@ -16381,8 +16395,8 @@ MonoBehaviour:
   plugID: 3
   pushDirection: {x: 1, y: 0, z: 0}
   pushDistance: 4
-  snapRange: 0.5
-  autoSnapThreshold: 0.3
+  snapRange: 2
+  autoSnapThreshold: 1
   holdSound: {fileID: 0}
   insertSound: {fileID: 0}
   insertDuration: 0.2
@@ -18792,10 +18806,9 @@ Transform:
   m_LocalPosition: {x: 0.00201606, y: -0.00039999932, z: -0.00020357966}
   m_LocalScale: {x: 0.24574232, y: 0.49143472, z: 0.2457423}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2129883143}
+  m_Children: []
   m_Father: {fileID: 339935052}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &1819380894685990541
 GameObject:
@@ -23290,7 +23303,7 @@ Transform:
   m_GameObject: {fileID: 7565247777764097986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0026005208, y: 0.003000047, z: -0.0009034872}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1293482962}
