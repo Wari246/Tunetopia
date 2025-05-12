@@ -65,7 +65,8 @@ public class RightClickRotator : MonoBehaviour
     private void Rotate()
     {
         Vector3 axis = GetAxisVector(currentAxis);
-        transform.Rotate(axis, rotationAngle, Space.Self);
+        transform.Rotate(axis, rotationAngle, Space.World);
+
     }
 
     public void SwitchAxis()

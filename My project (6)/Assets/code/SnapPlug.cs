@@ -4,8 +4,6 @@ using System.Collections;
 public class SnapPlug : MonoBehaviour
 {
     public string plugID;
-    public Vector3 pushDirection = Vector3.forward;
-    public float pushDistance = 0.02f; // fallback距離
     public float snapRange = 0.5f;
     public float autoSnapThreshold = 0.3f;
     public AudioClip holdSound;
@@ -124,20 +122,13 @@ public class SnapPlug : MonoBehaviour
         Vector3 startPos = parentTransform.position;
         Quaternion startRot = parentTransform.rotation;
 
-        Vector3 pushDirWorld = transform.TransformDirection(pushDirection.normalized);
-
-        float finalPushDistance = pushDistance;
-
+        Vector3 endPos = startPos;
         if (targetSocket.insertionEndPoint != null)
         {
-            Vector3 plugTip = transform.position;
-            Vector3 endPoint = targetSocket.insertionEndPoint.position;
-
-            float plugZLength = transform.lossyScale.z * 0.5f; // 必要に応じて調整
-            finalPushDistance = Vector3.Distance(plugTip, endPoint) + plugZLength;
+            Vector3 plugToParent = transform.position - parentTransform.position;
+            endPos = targetSocket.insertionEndPoint.position - plugToParent;
         }
 
-        Vector3 endPos = startPos + pushDirWorld * finalPushDistance;
         Quaternion endRot = targetSocket.transform.rotation;
 
         float elapsed = 0f;
@@ -152,13 +143,24 @@ public class SnapPlug : MonoBehaviour
 
         parentTransform.position = endPos;
         parentTransform.rotation = endRot;
-        parentTransform.SetParent(targetSocket.transform);
+        if (AssemblyRootReceiver.Instance != null)
+        {
+            AssemblyRootReceiver.Instance.RegisterAsChild(parentTransform);
+        }
+        else
+        {
+            parentTransform.SetParent(targetSocket.transform);
+        }
 
         if (insertSound != null && audioSource != null)
             audioSource.PlayOneShot(insertSound);
         if (PuzzleProgressionController.Instance != null)
         {
             PuzzleProgressionController.Instance.ReportPieceFullyInserted();
+            // スケール補正処理
+            // スケール補正処理
+          
+
         }
     }
 }
