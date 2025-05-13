@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 53699397}
   - component: {fileID: 53699396}
   m_Layer: 0
-  m_Name: connectpoint (1)
+  m_Name: endpoint
   m_TagString: SnapSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1771,7 +1771,7 @@ Transform:
   m_GameObject: {fileID: 145499253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0066769444, y: -0.0053199977, z: -0.015229957}
-  m_LocalScale: {x: 0.0014069831, y: 0.002, z: 0.0028429641}
+  m_LocalScale: {x: 0.0014069831, y: 0.004, z: 0.006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1860458795}
@@ -5586,7 +5586,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619654696}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0029699951, y: 0.0013100021, z: -0.0117000025}
   m_LocalScale: {x: 0.0014069831, y: 0.002, z: 0.0028429641}
   m_ConstrainProportionsScale: 0
@@ -5670,7 +5670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plugID: 1
-  snapRange: 2
+  snapRange: 1
   autoSnapThreshold: 0.5
   holdSound: {fileID: 8300000, guid: 69a827246ac8443f983fd951e0b11d0a, type: 3}
   insertSound: {fileID: 8300000, guid: e54e6e0e78a484ddfae2113b23fdc558, type: 3}
