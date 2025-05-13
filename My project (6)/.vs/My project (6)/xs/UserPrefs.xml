@@ -1,21 +1,22 @@
 ﻿<Properties StartupConfiguration="{618AA404-C303-DC6A-AA05-B45F03D8038B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/NewBehaviourScript.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/code/Mouse.cs" Line="6" Column="27" IsPinned="True" />
       <File FileName="Assets/code/SnapSocket.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/SnapPlug.cs" Line="153" Column="10" />
-      <File FileName="Assets/code/PuzzleCompletionChecker.cs" Line="30" Column="39" />
+      <File FileName="Assets/code/SnapPlug.cs" Line="185" Column="1" />
+      <File FileName="Assets/code/PuzzleCompletionChecker.cs" />
       <File FileName="Assets/code/PartSpawner.cs" />
-      <File FileName="Assets/code/RightClickRotator.cs" Line="69" Column="1" />
+      <File FileName="Assets/code/RightClickRotator.cs" />
       <File FileName="Assets/code/ObjectRotator.cs" />
       <File FileName="Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/MaterialReferenceManager.cs" />
       <File FileName="Assets/code/ScaleOnHit.cs" />
-      <File FileName="Assets/code/CameraSwitcher.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/CameraSwitcher.cs" />
       <File FileName="Assets/code/MoveOnObjectRemoved.cs" />
       <File FileName="Assets/code/MoveModeToggler.cs" />
-      <File FileName="Assets/code/PuzzleManager.cs" Line="213" Column="31" />
-      <File FileName="Assets/code/PuzzleProgressionController.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/NewBehaviourScript.cs" Line="19" Column="1" />
+      <File FileName="Assets/code/PuzzleManager.cs" />
+      <File FileName="Assets/code/PuzzleProgressionController.cs" />
+      <File FileName="Assets/code/AssemblyRootReceiver.cs" Line="3" Column="34" />
+      <File FileName="Assets/code/MouseZoom.cs" />
+      <File FileName="Assets/code/AxisMover.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +24,7 @@
           <Node name="My project (6)" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="code" expanded="True">
-                <Node name="NewBehaviourScript.cs" selected="True" />
+                <Node name="Mouse.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -33,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cb134799-c2fa-4a8b-bf14-445de78209f5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e423acc9-a9d8-4b82-a1e7-14e4fe400617" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

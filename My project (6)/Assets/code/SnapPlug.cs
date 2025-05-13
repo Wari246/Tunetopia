@@ -143,24 +143,42 @@ public class SnapPlug : MonoBehaviour
 
         parentTransform.position = endPos;
         parentTransform.rotation = endRot;
-        if (AssemblyRootReceiver.Instance != null)
+
+        // プラグのオブジェクト（親）もソケットのオブジェクト（親）も合体させる
+        if (targetSocket != null && targetSocket.transform != null)
         {
-            AssemblyRootReceiver.Instance.RegisterAsChild(parentTransform);
-        }
-        else
-        {
-            parentTransform.SetParent(targetSocket.transform);
+            // プラグがついているオブジェクトをソケットがついているオブジェクトの親に設定
+            transform.SetParent(targetSocket.transform);
+
+            // 親の親（親オブジェクト）も一緒に合体させる
+            Transform targetSocketParent = targetSocket.transform.parent;
+            if (targetSocketParent != null)
+            {
+                // 親オブジェクトも一緒に登録（合体した親オブジェクトとして移動）
+                parentTransform.SetParent(targetSocketParent);
+            }
+
+            // 合体した位置にプラグオブジェクトがソケットオブジェクトの子として設定される
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
         }
 
+        // 合体したオブジェクトが最終的に「からオブジェクト」に移動
+        if (AssemblyRootReceiver.Instance != null)
+        {
+            // ここで親オブジェクト（親の親オブジェクト）を「からオブジェクト」に移動
+            AssemblyRootReceiver.Instance.RegisterAsChild(targetSocket.transform.parent); // ソケットの親をからオブジェクトに
+        }
+
+        // 挿入音があれば再生
         if (insertSound != null && audioSource != null)
             audioSource.PlayOneShot(insertSound);
+
         if (PuzzleProgressionController.Instance != null)
         {
             PuzzleProgressionController.Instance.ReportPieceFullyInserted();
             // スケール補正処理
             // スケール補正処理
-          
-
         }
     }
 }
